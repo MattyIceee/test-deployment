@@ -1,0 +1,24 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended", ":dependencyDashboard"],
+  "schedule": ["at any time"],
+  "prHourlyLimit": 0,
+  "prConcurrentLimit": 0,
+  "branchConcurrentLimit": 0,
+  "separateMajorMinor": true,
+  "separateMultipleMajor": true,
+  "labels": ["renovate"],
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["major"],
+      "addLabels": ["breaking-change"],
+      "prBodyNotes": [
+        ":warning: Major version bump — check this project's upgrade notes before merging. Homelab majors frequently require manual data or config migration."
+      ]
+    },
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+      "addLabels": ["non-breaking"]
+    }
+  ]
+}
