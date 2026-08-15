@@ -6,7 +6,7 @@ services:
       - "8080:80"
     restart: unless-stopped
   mariadb:
-    image: mariadb:10.6.11
+    image: mariadb:10.11.18
     container_name: nextcloud-db
     ports:
       - "3306:3306"
