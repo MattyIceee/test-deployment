@@ -1,6 +1,6 @@
 services:
   nextcloud:
-    image: nextcloud:25.0.0
+    image: nextcloud:26.0.13
     container_name: nextcloud
     ports:
       - "8080:80"
